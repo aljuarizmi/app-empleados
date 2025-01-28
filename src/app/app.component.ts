@@ -18,4 +18,12 @@ export class AppComponent {
     new Empleado("Ana","Lopez","Jefa Sección",3500),
     new Empleado("Lucía","García","Administrativo",2500),
   ];
+  agregarEmpleado(){
+    let miEmpleado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
+    this.empleados.push(miEmpleado);
+  }
+  cuadroNombre:string="";
+  cuadroApellido:string="";
+  cuadroCargo:string="";
+  cuadroSalario:number=0;
 }
