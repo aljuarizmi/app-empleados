@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Empleado } from './empleado.model';
 import { EmpleadoHijoCComponent } from "./empleado-hijo-c/empleado-hijo-c.component";
+import { ServicioEmpleadosService } from './servicio-empleados.service';
+import { EmpleadosService } from './empleados.service';
 
 
 @Component({
@@ -12,17 +14,20 @@ import { EmpleadoHijoCComponent } from "./empleado-hijo-c/empleado-hijo-c.compon
   styleUrl: './app.component.css',
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppComponent {
-  titulo = 'Listado de Empleados';
-  empleados:Empleado[]=[
-    new Empleado("Juan","Perez","Presidente",7500),
-    new Empleado("Luis","Guerra","Directora",5500),
-    new Empleado("Ana","Lopez","Jefa Sección",3500),
-    new Empleado("Lucía","García","Administrativo",2500),
-  ];
+export class AppComponent implements OnInit{
+    titulo = 'Listado de Empleados';
+    constructor(private miServicio:ServicioEmpleadosService,private empleadosService:EmpleadosService){
+      //this.empleados=this.empleadosService.empleados;
+    }
+  ngOnInit(): void {
+    //throw new Error('Method not implemented.');
+    this.empleados=this.empleadosService.empleados;
+  }
+    empleados:Empleado[]=[];
   agregarEmpleado(){
     let miEmpleado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
-    this.empleados.push(miEmpleado);
+    this.miServicio.muestraMensaje("Nombre del Empleado: "+miEmpleado.nombre)
+    this.empleadosService.agregarEmpleadoServicio(miEmpleado);
   }
   cuadroNombre:string="";
   cuadroApellido:string="";
