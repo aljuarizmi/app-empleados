@@ -1,14 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Empleado } from './empleado.model';
+import { EmpleadoHijoCComponent } from "./empleado-hijo-c/empleado-hijo-c.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule, EmpleadoHijoCComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {
   titulo = 'Listado de Empleados';

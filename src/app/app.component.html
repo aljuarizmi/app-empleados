@@ -26,7 +26,9 @@
   </div>
 </div>
 <br><br>
-<div class="container">
+<app-empleado-hijo-c *ngFor="let empleado of empleados; let i=index" [empleadoDeLista]="empleado" [indice]="i">
+</app-empleado-hijo-c>
+<!-- <div class="container">
   <div class="row">
     <div class="col">
       <div *ngFor="let empleado of empleados; let i=index">
@@ -34,4 +36,4 @@
       </div>
     </div>
   </div>  
-</div>
+</div> -->
