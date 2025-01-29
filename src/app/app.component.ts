@@ -5,11 +5,21 @@ import { Empleado } from './empleado.model';
 import { EmpleadoHijoCComponent } from "./empleado-hijo-c/empleado-hijo-c.component";
 import { ServicioEmpleadosService } from './servicio-empleados.service';
 import { EmpleadosService } from './empleados.service';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import { QuienesComponentComponent } from './quienes-component/quienes-component.component';
+import { ProyectosComponentComponent } from './proyectos-component/proyectos-component.component';
+import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
+import { RouterModule, RouterOutlet, Routes } from '@angular/router';
 
-
+/*const appRoutes:Routes=[
+  {path:'Home',component:HomeComponentComponent},
+  {path:'',component:ProyectosComponentComponent},
+  {path:'',component:QuienesComponentComponent},
+  {path:'',component:ContactoComponentComponent}
+];*/
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, CommonModule, EmpleadoHijoCComponent],
+  imports: [FormsModule, CommonModule, EmpleadoHijoCComponent,HomeComponentComponent,QuienesComponentComponent,ProyectosComponentComponent,ContactoComponentComponent,RouterModule,RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
