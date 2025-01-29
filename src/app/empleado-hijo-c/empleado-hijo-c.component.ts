@@ -10,9 +10,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './empleado-hijo-c.component.css'
 })
 export class EmpleadoHijoCComponent {
-@Input() empleadoDeLista:Empleado;
-@Input() indice:number;
-
+//@Input() empleadoDeLista:Empleado;
+//@Input() indice:number;
+  @Input()empleadoDeLista!: Empleado;
+  @Input()indice!: number;
   arrayCaracteristicas = [''];
 
   agregarCaracteristica(nuevaCaracteristica: string) {

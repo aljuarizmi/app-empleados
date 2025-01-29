@@ -3,7 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "strictPropertyInitialization": false,
+    //"strictPropertyInitialization": false,
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
