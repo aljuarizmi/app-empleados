@@ -11,12 +11,7 @@ import { ProyectosComponentComponent } from './proyectos-component/proyectos-com
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
 import { RouterModule, RouterOutlet, Routes } from '@angular/router';
 
-/*const appRoutes:Routes=[
-  {path:'Home',component:HomeComponentComponent},
-  {path:'',component:ProyectosComponentComponent},
-  {path:'',component:QuienesComponentComponent},
-  {path:'',component:ContactoComponentComponent}
-];*/
+
 @Component({
   selector: 'app-root',
   imports: [FormsModule, CommonModule, EmpleadoHijoCComponent,HomeComponentComponent,QuienesComponentComponent,ProyectosComponentComponent,ContactoComponentComponent,RouterModule,RouterOutlet],
@@ -29,9 +24,7 @@ export class AppComponent {
      constructor(private miServicio:ServicioEmpleadosService,private empleadosService:EmpleadosService){
        this.empleados=this.empleadosService.empleados;
      }
-     /*constructor(private empleadosService:EmpleadosService){
-      this.empleados=this.empleadosService.empleados;
-     }*/
+
      empleados:Empleado[]=[];
     /*empleados:Empleado[]=[
       new Empleado("Juan","Perez","Presidente",7500),
@@ -44,11 +37,17 @@ export class AppComponent {
   //   this.empleados=this.empleadosService.empleados;
   // }
     //empleados:Empleado[]=[];
-  agregarEmpleado(){
+  agregarEmpleado(eventNombre:HTMLInputElement,eventApellido:HTMLInputElement,eventCargo:HTMLInputElement,eventSalario:HTMLInputElement){
+
     let miEmpleado=new Empleado(this.cuadroNombre,this.cuadroApellido,this.cuadroCargo,this.cuadroSalario);
     //this.miServicio.muestraMensaje("Nombre del Empleado: "+miEmpleado.nombre)
     //this.empleados.push(miEmpleado);
     this.empleadosService.agregarEmpleadoServicio(miEmpleado);
+    eventNombre.value="";
+    eventApellido.value="";
+    eventCargo.value="";
+    eventSalario.value="";
+    eventNombre.focus();
   }
   cuadroNombre:string="";
   cuadroApellido:string="";

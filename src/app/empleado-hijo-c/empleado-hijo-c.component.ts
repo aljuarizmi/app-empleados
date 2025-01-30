@@ -12,11 +12,14 @@ import { CommonModule } from '@angular/common';
 export class EmpleadoHijoCComponent {
 //@Input() empleadoDeLista:Empleado;
 //@Input() indice:number;
+//El decorador @Input() se usa en componentes o directivas para recibir datos desde un componente padre. 
+//Permite la comunicación de datos unidireccional (de padre a hijo).
   @Input()empleadoDeLista!: Empleado;
   @Input()indice!: number;
   arrayCaracteristicas = [''];
 
   agregarCaracteristica(nuevaCaracteristica: string) {
     this.arrayCaracteristicas.push(nuevaCaracteristica);
+
   }
 }
