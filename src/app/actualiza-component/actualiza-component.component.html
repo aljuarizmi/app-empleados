@@ -20,4 +20,5 @@
         <button type="submit" class="btn btn-primary" (click)="actualizarEmpleado(Nombre,Apellido,Cargo,Salario)" style="margin-top: 35px;margin-right: 50px;" *ngIf="mostrarActualiza">Actualizar</button>
         <button type="submit" class="btn btn-primary" (click)="eliminarEmpleado(Nombre,Apellido,Cargo,Salario)" style="margin-top: 35px;" *ngIf="mostrarElimina">Eliminar</button>
     </div>
+    <p style="font-size:2em; text-align: center; font-weight: bold;" *ngIf="!mostrarActualiza&&!mostrarElimina">No ha ingresado correctamente a la aplicación. No se puede ejecutar ninguna acción</p>
   </form>

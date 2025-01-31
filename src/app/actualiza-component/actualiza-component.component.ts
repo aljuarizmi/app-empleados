@@ -27,6 +27,10 @@ export class ActualizaComponentComponent {
       this.mostrarActualiza=false;
       this.mostrarElimina=true;
     }
+    if(this.accion!=2&&this.accion!=1){
+      this.mostrarActualiza=false;
+      this.mostrarElimina=false;
+    }
     this.indice=this.route.snapshot.params['id'];
     let empleado:Empleado=this.empleadosService.encontrarEmpleado(this.indice);
     this.cuadroNombre=empleado.nombre;
