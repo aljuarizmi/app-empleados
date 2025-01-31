@@ -17,7 +17,7 @@
       <input type="text" name="salario" id="salario" placeholder="Salario" class="form-control"[(ngModel)]="cuadroSalario" #Salario>
     </div>
     <div class="col">
-        <button type="submit" class="btn btn-primary" (click)="actualizarEmpleado(Nombre,Apellido,Cargo,Salario)" style="margin-top: 35px;margin-right: 50px;">Actualizar</button>
-        <button type="submit" class="btn btn-primary" (click)="eliminarEmpleado(Nombre,Apellido,Cargo,Salario)" style="margin-top: 35px;">Eliminar</button>
+        <button type="submit" class="btn btn-primary" (click)="actualizarEmpleado(Nombre,Apellido,Cargo,Salario)" style="margin-top: 35px;margin-right: 50px;" *ngIf="mostrarActualiza">Actualizar</button>
+        <button type="submit" class="btn btn-primary" (click)="eliminarEmpleado(Nombre,Apellido,Cargo,Salario)" style="margin-top: 35px;" *ngIf="mostrarElimina">Eliminar</button>
     </div>
   </form>
